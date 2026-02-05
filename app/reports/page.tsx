@@ -8,7 +8,7 @@ import { FileText, Trash2 } from "lucide-react";
 import Link from "next/link";
 import Swal from 'sweetalert2';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://b22slwwqfmushdcf7t4cnkxt240xknbz.lambda-url.eu-north-1.on.aws";
+const API_URL = "https://b22slwwqfmushdcf7t4cnkxt240xknbz.lambda-url.eu-north-1.on.aws";
 
 interface Report {
     _id: string;

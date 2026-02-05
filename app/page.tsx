@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Heart, FileText, TrendingUp } from "lucide-react";
 import Swal from "sweetalert2";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://b22slwwqfmushdcf7t4cnkxt240xknbz.lambda-url.eu-north-1.on.aws";
+const API_URL = "https://b22slwwqfmushdcf7t4cnkxt240xknbz.lambda-url.eu-north-1.on.aws";
 
 export default function Home() {
   const router = useRouter();
