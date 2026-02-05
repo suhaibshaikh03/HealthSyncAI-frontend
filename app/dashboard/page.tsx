@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Plus, FileText, Activity } from "lucide-react";
 import Link from "next/link";
 import Swal from "sweetalert2";
-const API_URL = "http://localhost:5000";
+const API_URL = "https://healthsyncai-backend-580700595487.europe-west1.run.app";
 
 interface User {
   id?: string;

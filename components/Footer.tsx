@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Heart, Mail, Twitter, Github, Linkedin } from "lucide-react";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://healthsyncai-backend-580700595487.europe-west1.run.app";
 
 export default function Footer() {
   const pathname = usePathname();
