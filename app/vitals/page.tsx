@@ -24,7 +24,13 @@ export default function Vitals() {
 
   const fetchVitals = async () => {
     try {
-      const res = await fetch(`${API_URL}/vitals/myvitals`, { credentials: "include" });
+      const token = localStorage.getItem("token");
+      const res = await fetch(`${API_URL}/vitals/myvitals`, {
+        headers: {
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
       if (!res.ok) throw new Error("Failed to fetch vitals");
       const data = await res.json();
       setVitals(data.vitals || []);
@@ -42,10 +48,13 @@ export default function Vitals() {
   const handleAdd = async () => {
     if (!form.bp && !form.sugar && !form.weight) return Swal.fire("Error", "At least one vital is required", "error");
     try {
+      const token = localStorage.getItem("token");
       const res = await fetch(`${API_URL}/vitals/add`, {
         method: "POST",
-        credentials: "include",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+        },
         body: JSON.stringify(form),
       });
       const data = await res.json();
@@ -72,9 +81,12 @@ export default function Vitals() {
 
     if (!result.isConfirmed) return;
     try {
+      const token = localStorage.getItem("token");
       const res = await fetch(`${API_URL}/vitals/${id}`, {
         method: "DELETE",
-        credentials: "include",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+        },
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || "Failed to delete");

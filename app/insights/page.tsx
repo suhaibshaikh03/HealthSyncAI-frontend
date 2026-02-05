@@ -21,7 +21,13 @@ export default function Insights() {
   useEffect(() => {
     const fetchInsights = async () => {
       try {
-        const res = await fetch(`${API_URL}/report/insights`, { credentials: "include" });
+        const token = localStorage.getItem("token");
+        const res = await fetch(`${API_URL}/report/insights`, {
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        });
         if (!res.ok) return;
         const data = await res.json();
         setInsights(data.insights || []);

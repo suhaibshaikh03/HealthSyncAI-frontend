@@ -13,9 +13,13 @@ export default function Footer() {
 
   const checkLogin = async () => {
     try {
+      const token = localStorage.getItem("token");
       const res = await fetch(`${API_URL}/profile/getuser`, {
         method: "GET",
-        credentials: "include",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
         cache: "no-store",
       });
       if (res.ok) {
