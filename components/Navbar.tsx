@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { Button } from "./ui/button";
 
-const API_URL = "https://b22slwwqfmushdcf7t4cnkxt240xknbz.lambda-url.eu-north-1.on.aws";
+const API_URL = "http://localhost:5000";
 
 export default function Navbar() {
   const router = useRouter();

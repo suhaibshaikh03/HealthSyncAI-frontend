@@ -8,7 +8,7 @@ import { FileText, Download, ArrowLeft, Trash2, HelpCircle } from "lucide-react"
 import Link from "next/link";
 import Swal from "sweetalert2";
 
-const API_URL = "https://b22slwwqfmushdcf7t4cnkxt240xknbz.lambda-url.eu-north-1.on.aws";
+const API_URL = "http://localhost:5000";
 
 interface Report {
   _id: string;

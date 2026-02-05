@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Sparkles, FileText, Languages, BrainCircuit } from "lucide-react";
 
-const API_URL = "https://b22slwwqfmushdcf7t4cnkxt240xknbz.lambda-url.eu-north-1.on.aws";
+const API_URL = "http://localhost:5000";
 
 interface Insight {
   _id: string;

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Heart, Mail, Twitter, Github, Linkedin } from "lucide-react";
 
-const API_URL = "https://b22slwwqfmushdcf7t4cnkxt240xknbz.lambda-url.eu-north-1.on.aws";
+const API_URL = "http://localhost:5000";
 
 export default function Footer() {
   const pathname = usePathname();
