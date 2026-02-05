@@ -37,6 +37,7 @@ const Reports = () => {
             }
         };
         fetchReports();
+        console.log(reports);
     }, []);
 
     // Delete report
