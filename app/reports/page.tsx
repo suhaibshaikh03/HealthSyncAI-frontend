@@ -8,7 +8,7 @@ import { FileText, Trash2 } from "lucide-react";
 import Link from "next/link";
 import Swal from 'sweetalert2';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://b22slwwqfmushdcf7t4cnkxt240xknbz.lambda-url.eu-north-1.on.aws";
 
 interface Report {
     _id: string;
@@ -26,7 +26,14 @@ const Reports = () => {
     useEffect(() => {
         const fetchReports = async () => {
             try {
-                const res = await fetch(`${API_URL}/report/myreports`, { credentials: "include" });
+                const token = localStorage.getItem("token");
+                const res = await fetch(`${API_URL}/report/myreports`, {
+                    method: "GET",
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json",
+                    },
+                });
                 if (!res.ok) throw new Error("Failed to fetch reports");
                 const data = await res.json();
                 setReports(data.reports || []);
@@ -43,9 +50,13 @@ const Reports = () => {
     // Delete report
     const handleDelete = async (id: string) => {
         try {
+            const token = localStorage.getItem("token");
             const res = await fetch(`${API_URL}/report/${id}`, {
                 method: "DELETE",
-                credentials: "include",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Content-Type": "application/json",
+                },
             });
             if (!res.ok) throw new Error("Failed to delete report");
 

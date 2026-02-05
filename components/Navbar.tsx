@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { Button } from "./ui/button";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://b22slwwqfmushdcf7t4cnkxt240xknbz.lambda-url.eu-north-1.on.aws";
 
 export default function Navbar() {
   const router = useRouter();
@@ -27,10 +27,17 @@ export default function Navbar() {
 
   const checkLogin = async () => {
     try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        setUser(null);
+        return;
+      }
       const res = await fetch(`${API_URL}/profile/getuser`, {
         method: "GET",
-        credentials: "include",
-        cache: "no-store",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
       });
       if (res.ok) {
         const data = await res.json();
@@ -49,10 +56,16 @@ export default function Navbar() {
 
   const handleLogout = async () => {
     try {
+      const token = localStorage.getItem("token");
       await fetch(`${API_URL}/auth/logout`, {
         method: "POST",
-        credentials: "include",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
       });
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
       Swal.fire("Success", "Logged out successfully", "success");
       setUser(null);
       setOpen(false);
@@ -78,8 +91,8 @@ export default function Navbar() {
           key={link.href}
           href={link.href}
           className={`flex items-center gap-2 px-3 py-2 rounded-md transition-all ${isActive
-              ? "bg-primary text-white font-semibold shadow"
-              : "hover:bg-accent/10"
+            ? "bg-primary text-white font-semibold shadow"
+            : "hover:bg-accent/10"
             }`}
           onClick={() => setOpen(false)}
         >
