@@ -17,6 +17,7 @@ interface Report {
     title: string;
     dateSeen: string;
     summary: string;
+    createdAt?: string; // Add createdAt field
 }
 
 const Reports = () => {
@@ -98,7 +99,7 @@ const Reports = () => {
                                     <FileText className="w-5 h-5 text-accent" /> {r.title || r.filename}
                                 </CardTitle>
                                 <CardDescription>
-                                    Date: {r.dateSeen || "Unknown"} <br />
+                                    Date: {r.dateSeen ? new Date(r.dateSeen).toLocaleDateString() : r.createdAt ? new Date(r.createdAt).toLocaleDateString() : "Unknown"} <br />
                                     Summary: {r.summary || "No summary available"}
                                 </CardDescription>
                             </div>
