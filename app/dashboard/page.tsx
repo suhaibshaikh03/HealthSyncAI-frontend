@@ -7,9 +7,9 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Plus, FileText, Activity, Loader2, Upload, HeartPulse, Brain, TrendingUp } from "lucide-react";
 import Link from "next/link";
 import Swal from "sweetalert2";
-const API_URL = process.env.NODE_ENV === 'development' 
-  ? "http://localhost:5000" 
-  : "https://healthsyncai-backend-580700595487.europe-west1.run.app";
+const API_URL = process.env.NODE_ENV === 'development'
+  ? "http://localhost:5000"
+  : "https://healthsyncaibackend.delightfulplant-5b8447f2.southeastasia.azurecontainerapps.io/";
 
 interface User {
   id?: string;

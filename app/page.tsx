@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Heart, FileText, TrendingUp } from "lucide-react";
 import Swal from "sweetalert2";
 
-const API_URL = "https://healthsyncai-backend-580700595487.europe-west1.run.app";
+const API_URL = "https://healthsyncaibackend.delightfulplant-5b8447f2.southeastasia.azurecontainerapps.io/";
 
 export default function Home() {
   const router = useRouter();
