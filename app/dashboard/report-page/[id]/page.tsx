@@ -8,7 +8,7 @@ import { FileText, Download, ArrowLeft, Trash2, HelpCircle } from "lucide-react"
 import Link from "next/link";
 import Swal from "sweetalert2";
 
-const API_URL = "https://healthsyncaibackend.delightfulplant-5b8447f2.southeastasia.azurecontainerapps.io/";
+const API_URL = "https://mycontainerapp.happysky-097fc272.southeastasia.azurecontainerapps.io/";
 
 interface Report {
   _id: string;

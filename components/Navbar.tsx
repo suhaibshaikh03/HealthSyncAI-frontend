@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { Button } from "./ui/button";
 
-const API_URL = "https://healthsyncaibackend.delightfulplant-5b8447f2.southeastasia.azurecontainerapps.io/";
+const API_URL = "https://mycontainerapp.happysky-097fc272.southeastasia.azurecontainerapps.io/";
 
 export default function Navbar() {
   const router = useRouter();

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Sparkles, FileText, Languages, BrainCircuit } from "lucide-react";
 
-const API_URL = "https://healthsyncaibackend.delightfulplant-5b8447f2.southeastasia.azurecontainerapps.io/";
+const API_URL = "https://mycontainerapp.happysky-097fc272.southeastasia.azurecontainerapps.io/";
 
 interface Insight {
   _id: string;

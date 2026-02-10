@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Trash2 } from "lucide-react";
 import Swal from "sweetalert2";
 
-const API_URL = "https://healthsyncaibackend.delightfulplant-5b8447f2.southeastasia.azurecontainerapps.io/";
+const API_URL = "https://mycontainerapp.happysky-097fc272.southeastasia.azurecontainerapps.io/";
 
 interface Vital {
   _id: string;

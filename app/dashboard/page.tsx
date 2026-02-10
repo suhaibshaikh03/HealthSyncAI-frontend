@@ -9,7 +9,7 @@ import Link from "next/link";
 import Swal from "sweetalert2";
 const API_URL = process.env.NODE_ENV === 'development'
   ? "http://localhost:5000"
-  : "https://healthsyncaibackend.delightfulplant-5b8447f2.southeastasia.azurecontainerapps.io/";
+  : "https://mycontainerapp.happysky-097fc272.southeastasia.azurecontainerapps.io/";
 
 interface User {
   id?: string;
